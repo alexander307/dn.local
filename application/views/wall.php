@@ -5,8 +5,8 @@
         <input name="send" type="submit" value="Отправить" />
     </form>
 </div>
-<a href="http://www.yandex.ru/" class="iframe" title="Yandex">Yandex</a>
-<a href="dn.local/" class="iframe" title="Yandex">Yandex</a>
+<a href="www.yandex.ru/" class="iframe" title="Yandex">Yandex</a>
+<a href="/comments/1" class="iframe" title="Yandex">Yandex</a>
 
 <?php 
 //echo print_r($comments)."<br/>" ;
@@ -29,6 +29,7 @@ foreach($posts as $key => $post)
 {
     $a[] = $post->post;
     $b[] = $post->post_id;
+    
 
 }
 $i = count($a)-1;
@@ -39,6 +40,7 @@ echo "$a[$j]</br>";
 echo "Номер поста: $b[$j]</br>";
 echo "<div class = 'comment1'>Комментарии</div>";
  echo "<div class = 'comment2'></br>";
+ 
 foreach ($arr as $x)
 {
     
@@ -71,6 +73,7 @@ echo "$a[$j]</br>";
 echo "Номер поста: $b[$j]</br>";
 
 echo "<div class = 'comment1'>Комментарии</div>";
+
  echo "<div class = 'comment2'></br>";
 foreach ($arr as $x)
 {

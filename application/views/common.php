@@ -77,6 +77,8 @@ $('.comment1').click(function()
          $(this).next('.comment2').fadeToggle(800);
          
     }); 
+    
+    
 
 });
 </script>       
