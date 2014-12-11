@@ -32,6 +32,11 @@ $comment->save();
        
 
         } 
+        
+        $post = ORM::factory('post')
+                ->where('post_id', '=', $post_id)
+                ->find();
+                
        
         
         $comments = ORM::factory('comment')

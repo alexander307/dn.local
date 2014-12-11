@@ -6,12 +6,13 @@
     </form>
 </div>
 <a href="www.yandex.ru/" class="iframe" title="Yandex">Yandex</a>
-<a href="/comments/1" class="iframe" title="Yandex">Yandex</a>
+<!---- <a href="/comments/1" class="iframe" title="Yandex">Yandex</a> --->
 
 <?php 
 //echo print_r($comments)."<br/>" ;
 //echo $posts['post'];
 $k = 0;
+
 foreach($comments as $key => $c)
 {
     $com[] = $c->post_id;
@@ -38,6 +39,7 @@ for ($j = $i; $j>=$i; $j--)
 {
 echo "$a[$j]</br>";
 echo "Номер поста: $b[$j]</br>";
+echo "<a href= '/comments/$b[$j]' class= 'iframe' title= 'Yandex'>Yandex</a>";
 echo "<div class = 'comment1'>Комментарии</div>";
  echo "<div class = 'comment2'></br>";
  
@@ -49,6 +51,7 @@ foreach ($arr as $x)
         echo $x[1];
         echo $x[0];
        echo '</br>'; }
+    
 }
 
 
@@ -71,6 +74,7 @@ for ($j = $i-1; $j>=0; $j--)
 {
 echo "$a[$j]</br>";
 echo "Номер поста: $b[$j]</br>";
+echo "<a href= '/comments/$b[$j]' class= 'iframe' title= 'Yandex'>Yandex</a>";
 
 echo "<div class = 'comment1'>Комментарии</div>";
 

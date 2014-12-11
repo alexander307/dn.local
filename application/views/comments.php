@@ -1,16 +1,17 @@
-
-
 <?php 
 
 //echo $post['post']."<br/>" ;
 //echo $posts['post'];
 $i = 0;
 
+echo $post->post;
+echo "<br/><br/><hr/>";
  
 foreach($comments as $key => $comment)
 {
     $a[] = $comment->comment;  
-    echo "$a[$i]<br/>";
+    echo "$a[$i]";
+    echo "<input name='' type='submit' value='удалить' /><br/>";
     $i++;
 }
 

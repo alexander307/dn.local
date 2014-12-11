@@ -57,7 +57,11 @@
     </div>
     <div id = "content_right">               
         <div id = "people"> люди</div>   
-	<div id = "music">музыка</div>
+        <div id = "music">
+            
+            
+            
+        </div>
         <div id = "video1">video 1</div>
 	<div id = "video2">видео2</div>
     		

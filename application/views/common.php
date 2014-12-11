@@ -65,8 +65,8 @@ $(document).ready(function()
 		cyclic: true
 	});
     $('.iframe').fancybox({
-		width : '90%',
-		height : '90%',
+		width : '40%',
+		height : '40%',
 		titlePosition: 'outside'
 	});// конец fancybox
     
@@ -78,7 +78,9 @@ $('.comment1').click(function()
          
     }); 
     
-    
+   
+   
+   
 
 });
 </script>       
