@@ -155,6 +155,7 @@ width: 100%;
 min-height: 120px;
 background: red;
 float: left;
+position: fixed;
 }
 
 

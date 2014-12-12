@@ -19,6 +19,13 @@
 <script src="<?php echo URL::base(); ?>public/js/fancybox/jquery.fancybox-1.3.4.min.js"></script>
 
 
+<link rel="stylesheet" href="<?php echo URL::base(); ?>public/js/skin/circle.player/circle.player.css">
+
+<script type="text/javascript" src="<?php echo URL::base(); ?>public/js/dist/jplayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="<?php echo URL::base(); ?>public/js/lib/jquery.transform2d.js"></script>
+<script type="text/javascript" src="<?php echo URL::base(); ?>public/jslib/jquery.grab.js"></script>
+<script type="text/javascript" src="<?php echo URL::base(); ?>public/js/lib/mod.csstransforms.min.js"></script>
+<script type="text/javascript" src="<?php echo URL::base(); ?>public/js/lib/circle.player.js"></script>
 
 
 <?php foreach($styles as $style): ?>
@@ -79,13 +86,43 @@ $('.comment1').click(function()
     }); 
     
    
-   
+
+
+
+
+	/*
+	 * Instance CirclePlayer inside jQuery doc ready
+	 *
+	 * CirclePlayer(jPlayerSelector, media, options)
+	 *   jPlayerSelector: String - The css selector of the jPlayer div.
+	 *   media: Object - The media object used in jPlayer("setMedia",media).
+	 *   options: Object - The jPlayer options.
+	 *
+	 * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
+	 *
+	 * The CirclePlayer uses the default supplied:"m4a, oga" if not given, which is different from the jPlayer default of supplied:"mp3"
+	 * Note that the {wmode:"window"} option is set to ensure playback in Firefox 3.6 with the Flash solution.
+	 * However, the OGA format would be used in this case with the HTML solution.
+	 */
+
+	var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+	{
+		m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
+		oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+	}, {
+		cssSelectorAncestor: "#cp_container_1",
+		swfPath: "../../dist/jplayer",
+		wmode: "window",
+		keyEnabled: true
+	});  
    
 
 });
 </script>       
 </head>
 <body id = "body">
+    <!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
+			<div id="jquery_jplayer_1" class="cp-jplayer"></div>
  <div id = "container" >
     <div id = "header">
         <div id = "header1"><a href="<?php echo URL::site(); ?>"><img width = "300px" height="173px" src="<?php echo URL::base(); ?>public/images/header1.png"></div></a>
@@ -156,5 +193,6 @@ $('.comment1').click(function()
     <marquee> Copyright Александр Ковальчук </marquee>
   </footer>
 		</div>
+</div>
 </body>
 </html>
