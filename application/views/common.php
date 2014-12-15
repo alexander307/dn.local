@@ -13,6 +13,7 @@
 <link href="<?php echo URL::base(); ?>public/js/fancybox/jquery.fancybox-1.3.4.css" 
     rel="stylesheet" type="text/css" />
 
+
 <script src="<?php echo URL::base(); ?>public/js/jquery-1.7.1.min.js"></script>
 <script src="<?php echo URL::base(); ?>public/js/jquery.easing.1.3.js"></script>
 <script src="<?php echo URL::base(); ?>public/js/anythingSlider/jquery.anythingslider.js"></script>
@@ -61,6 +62,7 @@ $(document).ready(function()
          $('#footer').fadeToggle(10000,'easeOutBounce');
     }); 
     
+    
     $('#gallery a').fancybox({
 		overlayColor: '#060',
 		overlayOpacity: .3,
@@ -72,11 +74,14 @@ $(document).ready(function()
 		cyclic: true
 	});
     $('.iframe').fancybox({
-		width : '40%',
-		height : '40%',
+		width : '50%',
+		height : '50%',
 		titlePosition: 'outside'
 	});// конец fancybox
-    
+   $(".youtube").fancybox({
+            width : '100%',
+		height : '100%'
+            }); 
 $('.comment2').hide();
 $('.comment1').click(function()
     {
@@ -115,6 +120,7 @@ $('.comment1').click(function()
 		wmode: "window",
 		keyEnabled: true
 	});  
+   
    
 
 });

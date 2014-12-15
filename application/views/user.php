@@ -81,8 +81,10 @@
             
             
         </div>
-        <div id = "video1">video 1</div>
-	<div id = "video2">видео2</div>
+        <div id = 'usrvideo'>
+            <?php echo $video ?>
+        </div>
+        
     		
     </div>
     

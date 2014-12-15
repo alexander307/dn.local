@@ -18,11 +18,15 @@ class Controller_User extends Controller_Common {
                 ->bind('service', $service)
                 ->bind('job', $job)
                 ->set('user',$id)
-                ->bind('posts',$posts);
+                ->bind('posts',$posts)
+                ->bind('video', $video);
         
         
         $posts_url = 'wall/'.$id;
         $posts = Request::factory($posts_url)->execute();
+        
+        $video_url = 'user_video/'.$id;
+        $video = Request::factory($video_url)->execute();
                 
                 
              

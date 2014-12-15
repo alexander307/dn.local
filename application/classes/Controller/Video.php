@@ -1,15 +1,45 @@
 <?php defined('SYSPATH') or die('No direct script access.');
  
-class Controller_Images extends Controller_Common {
+class Controller_Video extends Controller_Common {
  
     // Фотографии
     public function action_index()
     
     { 
-       
-        $content = View::factory('/video'); //изменить на user_#id/photo_название_альбома(если будет не лень, то поделю на альбомы фото. нет, так и оставолю
-       $this->template->content = $content;
-    }	
- 
-}
 
+        $id = $this->request->param('id');
+        
+                //->bind('moovie', $moovie);
+        
+      
+        
+        if(($_POST))
+        {
+         
+$a = Arr::get($_POST, 'send1');
+$check = ORM::factory('video', $a)
+                ->as_array();
+//echo "<hr/>";
+//print_r($check['id']);
+//echo "<hr/>";
+if ($check['id']!=null){
+ORM::factory('video', $a)
+        ->delete();
+
+}
+         }
+        
+        $video = ORM::factory('video')
+                ->where('outer_id', '=', $id)
+                ->find_all()
+                ->as_array();
+      
+     $content = View::factory('/video')
+                ->bind('video', $video);
+          $this->template->content = $content;
+        
+        
+       
+    }	
+
+}
