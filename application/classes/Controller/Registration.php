@@ -10,9 +10,22 @@ class Controller_Registration extends Controller_Common {
         $content = View::factory('/registration/step1');
         $this->template->content = $content;
         if ($_POST)
-        {
+        { 
+$registration1 = ORM::factory('unigue');
+$registration1->login = Arr::get($_POST, 'login');
+$registration1->password = Arr::get($_POST, 'password');
+$registration1->name = Arr::get($_POST, 'name');
+$registration1->surname = Arr::get($_POST, 'surname');
+$registration1->patronomyc = Arr::get($_POST, 'patronomyc');
+$registration1->nickname = Arr::get($_POST, 'nickname');
+$registration1->save();
+            
+            
+            
+            
             
            HTTP::redirect(URL::site()."/registration/step2");
+           
         }
     }
     
