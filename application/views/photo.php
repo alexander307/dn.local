@@ -1,12 +1,30 @@
 <div class="main">
 		<h1>Галерея</h1>
 		<div id="gallery">
-		<a href="<?php echo URL::base(); ?>public/images/large/slide1.jpg" rel="gallery" title="Куча мячей для гольфа"><img src="<?php echo URL::base(); ?>public/images/large/slide1.jpg" width="70" height="70" alt="golf balls"></a>
-		<a href="<?php echo URL::base(); ?>public/images/large/slide2.jpg" rel="gallery" title="Где-то в красивом месте"><img src="<?php echo URL::base(); ?>public/images/large/slide2.jpg" width="70" height="70" alt="rock wall"></a>
-		<a href="<?php echo URL::base(); ?>public/images/large/slide3.jpg" rel="gallery" title="Поле для гольфа"><img src="<?php echo URL::base(); ?>public/images/large/slide3.jpg" width="70" height="70" alt="old course"></a>
-		<a href="<?php echo URL::base(); ?>public/images/large/slide4.jpg" rel="gallery" title="Куча меток для мячей"><img src="<?php echo URL::base(); ?>public/images/large/slide4.jpg" width="70" height="70" alt="tees"></a>
-		<a href="<?php echo URL::base(); ?>public/images/large/slide5.jpg" rel="gallery" title="Дерево и пруд"><img src="<?php echo URL::base(); ?>public/images/large/slide5.jpg" width="70" height="70" alt="tree"></a>
-		<a href="<?php echo URL::base(); ?>public/images/large/slide6.jpg" rel="gallery" title="Это Лох-Несское чудовище?"><img src="<?php echo URL::base(); ?>public/images/large/slide6.jpg" width="70" height="70" alt="ocean course"></a></div>
+                    <?php 
+   $i = 0;
+   $k = 0;
+foreach ($photo as $f)
+{ 
+$id[] = $f->id;
+$name[] = $f->name;
+$desc[] = $f->description;
+$oid[] = $f->outer_id;
+    //echo $moovie[$i];
+    
+    } 
+    $cou = count($photo);
+    //echo $cou;
+    //echo $oid[0];
+    //echo $id[0];
+    ?>
+    
+                 <?php for ($i==0; $i<$cou; $i++) { ?>  
+		<a href="<?php echo URL::base(); ?>public/photo/<?php echo "/$oid[0]/$id[$i].jpg"?>" rel="gallery" title="<?php echo "$name[$i]" ?>">
+                    <img src="<?php echo URL::base(); ?>public/photo/<?php echo "/$oid[0]/$id[$i].jpg"?>" width="70" height="70" alt="golf balls">
+                </a>
+                    
+                 <?php } ?>  
 	</div>
 
 

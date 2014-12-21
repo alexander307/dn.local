@@ -18,13 +18,15 @@ class Controller_Wall extends Controller {
                 ->find_all()
                 ->as_array();
         
+        
+        
       foreach($count as $number)
 {
     $a[] = $number->post;  
 }
 $i = count($a)-1;
 
-         if(($_POST)&&($a[$i]!=Arr::get($_POST, 'post')))
+         if(($_POST)&&($a[$i]!=Arr::get($_POST, 'post'))&&(Arr::get($_POST, 'post')!=null))
         {
 $post = ORM::factory('post');
 $post->post = Arr::get($_POST, 'post');
@@ -35,17 +37,8 @@ $post->save();
         
         
         
-        if(($_POST)&&($a[$i]!=Arr::get($_POST, 'comment')))
-        {
- 
-$comment = ORM::factory('comment');
-$comment->comment = Arr::get($_POST, 'comment');
-$comment->post_id = Arr::get($_POST, 'post_id');
-$comment->id = $id;
-$comment->save();
-       
+        
 
-        } 
         $posts = ORM::factory('post')
                 ->where('id', '=', $id)
                 ->find_all()

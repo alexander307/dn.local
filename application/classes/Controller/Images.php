@@ -6,9 +6,17 @@ class Controller_Images extends Controller_Common {
     public function action_index()
     
     { 
-       
-        $content = View::factory('/photo'); //изменить на user_#id/photo_название_альбома(если будет не лень, то поделю на альбомы фото. нет, так и оставолю
-       $this->template->content = $content;
+       $id = $this->request->param('id');
+        
+        
+       $photo = ORM::factory('photo')
+                ->where('outer_id', '=', $id)
+                ->find_all()
+                ->as_array();
+      
+     $content = View::factory('/photo')
+                ->bind('photo', $photo);
+          $this->template->content = $content;
     }	
  
 }

@@ -12,34 +12,34 @@
 	<div id = "info">
             <div id ="slider">
                  
-               <div><div id ="slide1"> <?php 
+               <div><div class ="slide1"> <?php 
                             echo "<b> О главном</b> <hr/>";
-                            echo "День рождения: ".$main_information['Birthday_date']."<br/>";
-                            echo "Родной город: ".$main_information['Native_town']."<br/>";
-                            echo "Семейное положение: ".$main_information['MS']."<br/><hr/>";
+                            echo "<b>День рождения: </b><i>".$main_information['Birthday_date']."</i><br/>";
+                            echo "<b>Родной город: </b><i>".$main_information['Native_town']."</i><br/>";
+                            echo "<b>Семейное положение:</b><i> ".$main_information['MS']."</i><br/><hr/>";
                             echo "<b>Контактная информация</b> <hr/>";
-                            echo "Адрес: ".$adress['country'].", ".$adress['city'].", ".$adress['street'].", ".$adress['house'].".<br/>";
-                            echo "Электронная почта: ".$unique_['email']."<br/>";
+                            echo "<b>Адрес: </b><i>".$adress['country'].", ".$adress['city'].", ".$adress['street'].", ".$adress['house'].".</i><br/>";
+                            echo "<b>Электронная почта: </b><i>".$unique_['email']."</i><br/>";
                             echo "<hr/>"; 
                             ?></div></div>
                 <?php
-                    echo "<div>Школьная скамья: <hr/><br/>" ;
-                         echo "ВУЗ: ".$high_education['country'].", ".$high_education['city'].", ".$high_education['university'].", ".$high_education['year_1']."-".$high_education['year_2']."<br/>";
+                    echo "<div><div class ='slide1'><b>Где я только не учился:</b> <hr/><br/>" ;
+                         echo "<b>ВУЗ: </b><i>".$high_education['country'].", ".$high_education['city'].", ".$high_education['university'].", ".$high_education['year_1']."-".$high_education['year_2']."</i><br/>";
                             
-                         echo "Воинская служба: ".$service['country'].", ".$service['military_unit'].", ".$service['year_1']."-".$service['year_2']."<br/>";
+                         echo "<b>Воинская служба:</b> <i>".$service['country'].", ".$service['military_unit'].", ".$service['year_1']."-".$service['year_2']."</i><br/>";
                          
-                         echo "Моя любимая работа: ".$job['country'].", ".$job['city'].", ".$job['company'].", ".$job['post'].", ".$job['year_1']."-".$job['year_2']."<br/>";
-                        echo "<hr/></div>";
+                         echo "<b>Моя любимая работа: </b><i>".$job['country'].", ".$job['city'].", ".$job['company'].", ".$job['post'].", ".$job['year_1']."-".$job['year_2']."</i><br/>";
+                        echo "<hr/></div></div>";
                 ?>
                 <?php
-                        echo "<div>О моих божественных интересах и увлекательнейших хобби: <hr/>";
-                        echo "Музыка: ".$interests['music']."<br/>";
-                        echo "Фильмы: ".$interests['films']."<br/>";
-                        echo "Зомбоящик: ".$interests['TV-show']."<br/>";
-                        echo "Литература: ".$interests['books']."<br/>";
-                        echo "Игры: ".$interests['games']."<br/>";
-                        echo "Цитаты: ".$interests['cities']."<br/>";
-                        echo "Обо мне, Великом: ".$interests['about_me']."<br/></div>";
+                        echo "<div><div class ='slide1'><b>О моих божественных интересах и увлекательнейших хобби: </b><hr/>";
+                        echo "<b>Музыка: </b><i>".$interests['music']."</i><br/>";
+                        echo "<b>Фильмы: </b><i>".$interests['films']."</i><br/>";
+                        echo "<b>Зомбоящик: </b><i>".$interests['TV-show']."</i><br/>";
+                        echo "<b>Литература: </b><i>".$interests['books']."</i><br/>";
+                        echo "<b>Игры: </b><i>".$interests['games']."</i><br/>";
+                        echo "<b>Цитаты: </b><i>".$interests['cities']."</i><br/>";
+                        echo "<b>Обо мне, Великом:</b> <i>".$interests['about_me']."</i><br/></div></div>";
                        //echo print_r($unique_)."<br/>" ;
                         //echo print_r($adress)."<br/>" ;
                  //echo print_r($interests)."<br/>" ;

@@ -1,104 +1,74 @@
+<!---- Форма для ввода поста --->
 <div id = "post_container">
     <form action="" method="post">
-        Чем бы вы хотели поделится: <br />
+        <h3>Чем бы вы хотели поделится: </h3><br />
         <textarea id = "post" name="post" cols="40" rows="5"></textarea><br /><br />
         <input name="send" type="submit" value="Отправить" />
     </form>
 </div>
-<a href="www.yandex.ru/" class="iframe" title="Yandex">Yandex</a>
-<!---- <a href="/comments/1" class="iframe" title="Yandex">Yandex</a> --->
+
 
 <?php 
-//echo print_r($comments)."<br/>" ;
-//echo $posts['post'];
+//Делаем массив комментириев, с помощью которого подсчитаем количество под каждым постом
 $k = 0;
-
+$arr = null;
 foreach($comments as $key => $c)
 {
     $com[] = $c->post_id;
-    $come[] = $c->comment_id;
+    $come[] = $c->id;
     $co[] = $c->comment;
     $arr[] = array($com[$k],$co[$k]);
-    
-    //echo '</br>'.$com[$k].$come[$k].$co[$k].'</br>';
-    $k++;
-    
+   $k++;  
 }
-
-
+//Делаем массив постов, которые потом будем извлекать в обратном порядке
 foreach($posts as $key => $post)
 {
     $a[] = $post->post;
     $b[] = $post->post_id;
-    
 
 }
-$i = count($a)-1;
- echo "<div id = wall1>";
-for ($j = $i; $j>=$i; $j--)
+
+$i = count($a)-1; //всего постов
+//Первый блок, который не будем скрывать
+ echo "<div id = 'wall1'>"; 
+ //Выводим три последних поста
+for ($j = $i; $j>=$i-2; $j--)
 {
 echo "$a[$j]</br>";
 echo "Номер поста: $b[$j]</br>";
-echo "<a href= '/comments/$b[$j]' class= 'iframe' title= 'Yandex'>Yandex</a>";
-echo "<div class = 'comment1'>Комментарии</div>";
- echo "<div class = 'comment2'></br>";
- 
-foreach ($arr as $x)
-{
-    
-       if ($x[0] == $b[$j]) {
-         
-        echo $x[1];
-        echo $x[0];
-       echo '</br>'; }
-    
-}
+echo "<a href= '/comments/$b[$j]' class= 'iframe' title= 'Комментировать'>Комментировать</a>"; //Ссылка на фрейм комментария
+$p = 0;
+ echo "<form action='' method='post'><input type='hidden' name = 'send1' value = '".$b[$k]."'><input name='send' type='image' src = '".URL::base()."public/images/delete.png' /></form>";       
+/*foreach ($arr as $x)
+            {
+                if ($x[0] == $b[$j]) 
+                    {$p++; }
+            }*/
+//echo 'Комментириев:'; echo "$p";
 
-
-   echo  "<form action='' method='post'>
-        Покритикуйте этот пост: <br />
-        <textarea name='comment' cols='20' rows='3'></textarea><br /><br />
-        <input type = 'hidden' name = 'post_id' value = '".$b[$j]."' />
-        <input name='send' type='submit' value='Отправить' />
-    </form>
-</div>";
 echo '<hr/>';
-
-
 }
 echo "</div>";
 
- echo "<div id = wall2>";
+ echo "<div id = 'wall2'>";
  
-for ($j = $i-1; $j>=0; $j--)
+for ($j = $i-3; $j>=0; $j--)
 {
 echo "$a[$j]</br>";
 echo "Номер поста: $b[$j]</br>";
-echo "<a href= '/comments/$b[$j]' class= 'iframe' title= 'Yandex'>Yandex</a>";
+echo "<a href= '/comments/$b[$j]' class= 'iframe' title= 'Комментировать'>Кoмментировать</a>";
+echo "<form action='' method='post'><input type='hidden' name = 'send1' value = '".$b[$j]."'><input name='send' type='image' src = '".URL::base()."public/images/delete.png' /></form>";
 
-echo "<div class = 'comment1'>Комментарии</div>";
-
- echo "<div class = 'comment2'></br>";
-foreach ($arr as $x)
-{
-    
-       if ($x[0] == $b[$j]) {
-         
-        echo $x[1];
-        echo $x[0];
-       echo '</br>'; }
-}
-
-
-   echo  "<form action='' method='post'>
-        Покритикуйте этот пост: <br />
-        <textarea name='comment' cols='20' rows='3'></textarea><br /><br />
-        <input type = 'hidden' name = 'post_id' value = '".$b[$j]."' />
-        <input name='send' type='submit' value='Отправить' />
-    </form>
-</div>";
+ $p = 0;
+       /* foreach ($arr as $x)
+        {
+        if ($x[0] == $b[$j]) {
+       
+        $p++;
+        }     
+}*/
+//echo 'Комментириев:'; echo "$p";
 echo '<hr/>';
-
 }
 echo "</div>";
 

@@ -82,13 +82,13 @@ $(document).ready(function()
             width : '100%',
 		height : '100%'
             }); 
-$('.comment2').hide();
+                    /* $('.comment2').hide();
 $('.comment1').click(function()
     {
         
-         $(this).next('.comment2').fadeToggle(800);
+         $(this).next('.comment2').fadeToggle(800); 
          
-    }); 
+    }); */
     
    
 

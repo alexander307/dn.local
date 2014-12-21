@@ -117,7 +117,7 @@ opasity: 1;
     font-family: cursive;
 width: 148mm;
 min-height: 300px;
-background: #457c9d;
+background: #8fb7ee;
 float: right;
 opacity: .8;
 border-width: 1mm;
@@ -127,7 +127,7 @@ border-color: whitesmoke;
 
 }
 
-#slide1
+.slide1
 {
     font-family: monospace;
     width: 90%;

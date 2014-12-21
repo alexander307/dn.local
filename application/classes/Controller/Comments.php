@@ -9,20 +9,14 @@ class Controller_Comments extends Controller {
         $post_id = $this->request->param('post_id');
         $content = View::factory('/comments')
                 ->bind('post',$post)
-                ->bind('comments', $comments);
+                ->bind('comments', $comments)
+                 //->bind('a', $a)
+                 ;
         
-     /*    $count = ORM::factory('comment')
-                ->where('post_id', '=', $post_id)
-                ->find_all()
-                ->as_array();
         
-      foreach($count as $number)
-{
-    $a[] = $number->comment;  
-}
-$i = count($a)-1; */
+        
 
-         if(($_POST)/*&&($a[$i]!=Arr::get($_POST, 'comment'))*/)
+         if(($_POST)&&(Arr::get($_POST, 'comment')!=null))
         {
  
 $comment = ORM::factory('comment');
@@ -32,6 +26,22 @@ $comment->save();
        
 
         } 
+        
+        
+ if(($_POST))
+        {
+         
+$a = Arr::get($_POST, 'send1');
+$check = ORM::factory('comment', $a)
+                ->as_array();
+//echo "<hr/>";
+//print_r($check['id']);
+//echo "<hr/>";
+if ($check['id']!=null){
+ORM::factory('comment', $a)
+        ->delete();
+
+        }   }    
         
         $post = ORM::factory('post')
                 ->where('post_id', '=', $post_id)

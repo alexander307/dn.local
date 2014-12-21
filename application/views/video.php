@@ -15,7 +15,7 @@ $cid[] = $v->outer_id;
     } 
 
 $cou = count($moovie);
-echo $cou;
+//echo $cou;
 
 
     for ($k == 0; $k < ($cou); $k = $k+3)

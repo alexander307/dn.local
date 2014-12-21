@@ -137,6 +137,14 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
+
+Route::set('photo', 'photo(/<id>)', array('id' => '.+'))
+        ->defaults(array(
+            'controller' => 'images',
+            'action'     => 'index',
+            
+    ));
+
 Route::set('user_video', 'user_video(/<id>)', array('id' => '.+'))
         ->defaults(array(
             'controller' => 'addvideo',
