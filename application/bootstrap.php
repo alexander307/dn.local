@@ -138,6 +138,15 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
+Route::set('audio', 'audio(/<id>)', array('id' => '.+'))
+        ->defaults(array(
+            'controller' => 'audio',
+            'action'     => 'index',
+            
+    ));
+
+
+
 Route::set('photo', 'photo(/<id>)', array('id' => '.+'))
         ->defaults(array(
             'controller' => 'images',

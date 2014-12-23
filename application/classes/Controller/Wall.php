@@ -7,14 +7,14 @@ class Controller_Wall extends Controller {
     // Главная страница
     public function action_index()
     {
-        $id = $this->request->param('id');
+        $outer_id = $this->request->param('id');
         $content = View::factory('/wall')
                 ->bind('posts', $posts)
                 ->bind('comments', $comments)
                 ;
         
         $count = ORM::factory('post')
-                ->where('id', '=', $id)
+                ->where('outer_id', '=', $outer_id)
                 ->find_all()
                 ->as_array();
         
@@ -30,22 +30,35 @@ $i = count($a)-1;
         {
 $post = ORM::factory('post');
 $post->post = Arr::get($_POST, 'post');
-$post->id = $id;
+$post->outer_id = $outer_id;
 $post->save();
         } 
         
-        
+         if(($_POST))
+        {
+         
+$a = Arr::get($_POST, 'send1');
+$check = ORM::factory('post', $a)
+                ->as_array();
+//echo "<hr/>";
+//print_r($check['id']);
+//echo "<hr/>";
+if ($check['id']!=null){
+ORM::factory('post', $a)
+        ->delete();
+
+        }   } 
         
         
         
 
         $posts = ORM::factory('post')
-                ->where('id', '=', $id)
+                ->where('outer_id', '=', $outer_id)
                 ->find_all()
                 ->as_array();
         
         $comments = ORM::factory('comment')
-                ->where('id', '=', $id)
+                ->where('outer_id', '=', $outer_id)
                 ->find_all()
                 ->as_array();
         

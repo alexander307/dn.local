@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML > <!----PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"---->
 <html>
 <head>
     <title><?php echo $title; ?></title>
@@ -7,7 +7,7 @@
 
 <!-- <link href="<?php //echo URL::base(); ?>public/js/anythingSlider/anythingslider.css" 
     rel="stylesheet" type="text/css" /> -->
-
+<link href="<?php echo URL::base(); ?>public/js/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo URL::base(); ?>public/js/anythingSlider/theme-cs-portfolio.css" 
     rel="stylesheet" type="text/css" />
 <link href="<?php echo URL::base(); ?>public/js/fancybox/jquery.fancybox-1.3.4.css" 
@@ -27,6 +27,7 @@
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/jslib/jquery.grab.js"></script>
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/lib/mod.csstransforms.min.js"></script>
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/lib/circle.player.js"></script>
+
 
 
 <?php foreach($styles as $style): ?>
@@ -122,6 +123,91 @@ $('.comment1').click(function()
 	});  
    
    
+
+new jPlayerPlaylist({
+		jPlayer: "#jquery_jplayer_1",
+		cssSelectorAncestor: "#jp_container_1"
+	}, [
+		{
+			title:"Cro Magnon Man",
+			mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"
+		},
+		{
+			title:"Your Face",
+			mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg"
+		},
+		{
+			title:"Cyber Sonnet",
+			mp3:"http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg"
+		},
+		{
+			title:"Tempered Song",
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg"
+		},
+		{
+			title:"Hidden",
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg"
+		},
+		{
+			title:"Lentement",
+			free:true,
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg"
+		},
+		{
+			title:"Lismore",
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg"
+		},
+		{
+			title:"The Separation",
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg"
+		},
+		{
+			title:"Beside Me",
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg"
+		},
+		{
+			title:"Bubble",
+			free:true,
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+		},
+		{
+			title:"Stirring of a Fool",
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg"
+		},
+		{
+			title:"Partir",
+			free: true,
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg"
+		},
+		{
+			title:"Thin Ice",
+			mp3:"http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3",
+			oga:"http://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg"
+		}
+	], {
+		swfPath: "../../dist/jplayer",
+		supplied: "oga, mp3",
+		wmode: "window",
+		useStateClassSkin: true,
+		autoBlur: false,
+		smoothPlayBar: true,
+		keyEnabled: true
+	});
+});
+
+            
 
 });
 </script>       

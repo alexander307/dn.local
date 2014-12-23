@@ -2,31 +2,96 @@
 {
 width: 100%;
 height: 100%;
-background: #457c9d;
+//background: #457c9d;
+
  
 
 }
 
-#post
+
+
+#post_container
 {
- background: red;   
+  padding: 10px;
+    padding-left: 3cm; 
+    padding-bottom: 30px;
+  border-width: 2mm;
+  border-style: outset;
+  border-color: whitesmoke;
 }
 
+
+#post
+{
+ background: red;  
+ display: inline-block;
+ width: 12cm;
+ float: left;
+}
+ 
 #wall1
 {
 width: 100%;
 min-height: 100px;
-background: white;
+//background: white;
 float: left;
-opacity: .3;
+
+background-image: url("../images/wall1.png");
+
 }
 
 #wall2
 {
 width: 100%;
 min-height: 300px;
-background: red;
+//background: red;
 float: left;
+
+background-image: url("../images/wall2.png");
 
 }
 
+#napisat
+{
+font-size: 16px;    
+}
+
+.label
+ {
+     padding: 20px;
+     padding-left: 3cm;
+    border-width: 1mm;
+border-style: outset;
+border-color: whitesmoke;
+font-family: monospace;
+ font-weight: bolder; 
+ font-size: 13pt; 
+ color: #ccffff ;
+ font-style: oblique;
+ font-variant: small-caps;
+ }
+ 
+ .inline
+ {
+     display: inline-block;
+     //float: left;
+     padding-left: 10px;
+  
+     
+ }
+ 
+ .line
+ {
+    border-left: 2px solid;
+
+border-color: whitesmoke; 
+padding-left: 10px;
+ }
+ 
+ .but
+ {
+     width: 42px;
+     float: left;
+     padding-left: 5px;
+     padding-bottom: 20px;
+ }

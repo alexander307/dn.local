@@ -10,8 +10,7 @@ class Controller_Comments extends Controller {
         $content = View::factory('/comments')
                 ->bind('post',$post)
                 ->bind('comments', $comments)
-                 //->bind('a', $a)
-                 ;
+                 ->bind('a', $a);
         
         
         
@@ -44,7 +43,7 @@ ORM::factory('comment', $a)
         }   }    
         
         $post = ORM::factory('post')
-                ->where('post_id', '=', $post_id)
+                ->where('id', '=', $post_id)
                 ->find();
                 
        
