@@ -151,11 +151,17 @@ float: left;
 }
 #music
 {
-width: 100%;
-min-height: 120px;
-background: red;
+
 float: left;
 position: fixed;
+left: 2cm;
+}
+
+#music1
+{
+ float: left;
+position: fixed;
+left: 5cm;   
 }
 
 

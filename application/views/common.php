@@ -77,12 +77,41 @@ $(document).ready(function()
     $('.iframe').fancybox({
 		width : '50%',
 		height : '50%',
-		titlePosition: 'outside'
+		
 	});// конец fancybox
-   $(".youtube").fancybox({
-            width : '100%',
-		height : '100%'
+        
+                $('#music').click(function()
+        {$("#fancybox-outer").css( {right: '-65%',
+                top: '10px',
+         position: 'fixed'   
+        });
+        })
+        
+        $('#content').click(function()
+        {$("#fancybox-outer").css( {right: '0px',
+        position: 'relative'    
+        });
+        })
+        
+   $(".youtube").fancybox(
+           
+                {
+        width : '100%',
+	height : '100%'
             }); 
+            
+            $(".musica").fancybox({
+        autoScale: true,
+        titlePosition: 'inside',
+        width: '40%',
+        overlayOpacity: 0.5,
+        //hideOnOverlayClick: false,
+        
+        })
+                
+
+            
+        ;
                     /* $('.comment2').hide();
 $('.comment1').click(function()
     {
@@ -111,110 +140,13 @@ $('.comment1').click(function()
 	 * However, the OGA format would be used in this case with the HTML solution.
 	 */
 
-	var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
-	{
-		m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
-		oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-	}, {
-		cssSelectorAncestor: "#cp_container_1",
-		swfPath: "../../dist/jplayer",
-		wmode: "window",
-		keyEnabled: true
-	});  
-   
-   
-
-new jPlayerPlaylist({
-		jPlayer: "#jquery_jplayer_1",
-		cssSelectorAncestor: "#jp_container_1"
-	}, [
-		{
-			title:"Cro Magnon Man",
-			mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"
-		},
-		{
-			title:"Your Face",
-			mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg"
-		},
-		{
-			title:"Cyber Sonnet",
-			mp3:"http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg"
-		},
-		{
-			title:"Tempered Song",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg"
-		},
-		{
-			title:"Hidden",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg"
-		},
-		{
-			title:"Lentement",
-			free:true,
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg"
-		},
-		{
-			title:"Lismore",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg"
-		},
-		{
-			title:"The Separation",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg"
-		},
-		{
-			title:"Beside Me",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg"
-		},
-		{
-			title:"Bubble",
-			free:true,
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-		},
-		{
-			title:"Stirring of a Fool",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg"
-		},
-		{
-			title:"Partir",
-			free: true,
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg"
-		},
-		{
-			title:"Thin Ice",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg"
-		}
-	], {
-		swfPath: "../../dist/jplayer",
-		supplied: "oga, mp3",
-		wmode: "window",
-		useStateClassSkin: true,
-		autoBlur: false,
-		smoothPlayBar: true,
-		keyEnabled: true
-	});
-});
-
             
 
 });
 </script>       
 </head>
 <body id = "body">
-    <!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
-			<div id="jquery_jplayer_1" class="cp-jplayer"></div>
+    
  <div id = "container" >
     <div id = "header">
         <div id = "header1"><a href="<?php echo URL::site(); ?>"><img width = "300px" height="173px" src="<?php echo URL::base(); ?>public/images/header1.png"></div></a>

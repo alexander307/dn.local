@@ -28,3 +28,6 @@
 #10 C:\xampp\htdocs\dn.local\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #11 C:\xampp\htdocs\dn.local\index.php(118): Kohana_Request->execute()
 #12 {main} in C:\xampp\htdocs\dn.local\application\views\audio.php:5
+2014-12-22 23:17:59 --- CRITICAL: ErrorException [ 4 ]: syntax error, unexpected '->' (T_OBJECT_OPERATOR) ~ APPPATH\classes\Controller\Audio.php [ 10 ] in file:line
+2014-12-22 23:17:59 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line

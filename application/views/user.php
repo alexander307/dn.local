@@ -1,9 +1,12 @@
- <div id = "menu">
+ <?php echo "<div  id = 'music'><a href= '/audio/1' class= 'iframe musica'  title= 'Музыка'><img src = '".URL::base()."public/images/play.png'></a></div>"; ?>
+
+<div id = "menu">
 	<input type = "text" name = "search" size = "20" value = "Поиск..."/>
 	ГРАЖДАНЕ | СООБЩЕСТВА | МУЗЫКА | ВИДЕО | НОВОСТИ | F.A.Q. | ПОДДЕРЖКА |	
         <?php  echo " "." "." "." ".$unique_['name']." ".$unique_['patronomyc']." ".$unique_['surname'] ; ?> выход
 </div>
 <div id= "content">
+    
     <div id = "content_left">
 	<div id = "avatar">
             
@@ -57,30 +60,7 @@
     </div>
     <div id = "content_right">               
         <div id = "people"> люди</div>   
-        <div id = "music">
-          
-
-			<!-- The container for the interface can go where you want to display it. Show and hide it as you need. -->
-
-			<div id="cp_container_1" class="cp-container">
-				<div class="cp-buffer-holder"> <!-- .cp-gt50 only needed when buffer is > than 50% -->
-					<div class="cp-buffer-1"></div>
-					<div class="cp-buffer-2"></div>
-				</div>
-				<div class="cp-progress-holder"> <!-- .cp-gt50 only needed when progress is > than 50% -->
-					<div class="cp-progress-1"></div>
-					<div class="cp-progress-2"></div>
-				</div>
-				<div class="cp-circle-control"></div>
-				<ul class="cp-controls">
-					<li><a class="cp-play" tabindex="1">play</a></li>
-					<li><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li> <!-- Needs the inline style here, or jQuery.show() uses display:inline instead of display:block -->
-				</ul>
-                        </div>
-                        
-            
-            
-        </div>
+        
         <div id = 'usrvideo'>
             <?php echo $video ?>
         </div>
