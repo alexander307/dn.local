@@ -27,7 +27,7 @@
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/jslib/jquery.grab.js"></script>
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/lib/mod.csstransforms.min.js"></script>
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/lib/circle.player.js"></script>
-
+<script type="text/javascript" src="<?php echo URL::base(); ?>public/js/jquery.validate.min.js"></script>
 
 
 <?php foreach($styles as $style): ?>
@@ -40,6 +40,13 @@
   <script>
 $(document).ready(function()
 { //$('#slider').hide();
+     $('.cell').focus(function(){
+            var field = $(this);
+            if (field.val()==field.attr('value')){
+                field.val('');
+            }
+        }); 
+    
     $('#slider').anythingSlider(
             {
         theme: "cs-portfolio", //поменял стандартную тему - эта больше дизайну сайта соответствует
@@ -76,22 +83,30 @@ $(document).ready(function()
 	});
     $('.iframe').fancybox({
 		width : '50%',
-		height : '50%',
-		
+		height : '50%',	
 	});// конец fancybox
         
-                $('#music').click(function()
-        {$("#fancybox-outer").css( {right: '-65%',
-                top: '10px',
-         position: 'fixed'   
+        $(".musica").fancybox({
+        hight: '100%',
+        titlePosition: 'inside',
+        width: '40%',
+        overlayOpacity: 0.5,
+        //hideOnOverlayClick: false,
+        
         });
-        })
+                $('#music').click(function()
+        {$("#fancybox-outer").css( {right: '-60%',
+                top: '10px',
+         position: 'fixed' 
+        });
+        });
+        
         
         $('#content').click(function()
         {$("#fancybox-outer").css( {right: '0px',
         position: 'relative'    
         });
-        })
+        });
         
    $(".youtube").fancybox(
            
@@ -100,50 +115,94 @@ $(document).ready(function()
 	height : '100%'
             }); 
             
-            $(".musica").fancybox({
-        autoScale: true,
-        titlePosition: 'inside',
-        width: '40%',
-        overlayOpacity: 0.5,
-        //hideOnOverlayClick: false,
-        
-        })
-                
-
             
-        ;
-                    /* $('.comment2').hide();
-$('.comment1').click(function()
-    {
-        
-         $(this).next('.comment2').fadeToggle(800); 
+     $('#border').validate({
          
-    }); */
-    
-   
-
-
-
-
-	/*
-	 * Instance CirclePlayer inside jQuery doc ready
-	 *
-	 * CirclePlayer(jPlayerSelector, media, options)
-	 *   jPlayerSelector: String - The css selector of the jPlayer div.
-	 *   media: Object - The media object used in jPlayer("setMedia",media).
-	 *   options: Object - The jPlayer options.
-	 *
-	 * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
-	 *
-	 * The CirclePlayer uses the default supplied:"m4a, oga" if not given, which is different from the jPlayer default of supplied:"mp3"
-	 * Note that the {wmode:"window"} option is set to ensure playback in Firefox 3.6 with the Flash solution.
-	 * However, the OGA format would be used in this case with the HTML solution.
-	 */
+         rules: {
+             login: {
+                 required: true,
+                 rangelength: [4,16]
+             },
+             password:
+                     {
+                required: true,
+                rangelength: [4,16] 
+                     },
+                password1:
+                     {
+                        equalTo: '#password' 
+                     },
+                     name:
+                             {
+                                 required: true
+                             },
+                    surname:
+                             {
+                                 required: true
+                             },
+                    patronomyc:
+                             {
+                                 required: true
+                             },
+                             nickname:
+                             {required: true},
+                             sex:{required: true},
+                             family: {required: true},
+                             day: {required: true},
+                             month: {required: true},
+                             year: {required: true},
+                             native_town: {required: true},
+                             country: {required: true},
+                             city: {required: true},
+                             street: {required: true},
+                             number: {required: true, digits: true}
+                             
+                     
+         },
+         messages:
+                 {
+                     login:
+                     { required: "Введи свой логин, как без этого то?"},
+                  password:
+                     {
+                required: "Тебе не нужен пароль?",
+                rangelength: "Пароль должен быть от 4 до 16ти символов" 
+                     },
+                password1:
+                     {
+                        equalTo: "Пароль не совпадает" 
+                     },
+                     name:
+                             {
+                                 required: "Как тебя зовут то?"
+                             },
+                    surname:
+                             {
+                                 required: "Фамилия есть, Шариков?"
+                             },
+                    patronomyc:
+                             {
+                                 required: "Как вас по отчеству?"
+                             },
+                             nickname:{required: "Никнейм?"},
+                             sex:{required: "Да ВАМ в самую пору на Евровидение!"},
+                             family: {required: "Асоциальный Вы типчик!"},
+                             day: {required: "К сожаленью день рожденья..."},
+                             month: {required: "К сожаленью день рожденья..."},
+                             year: {required: "К сожаленью день рожденья..."},
+                             native_town: {required: "Где ты родился, Землянин?"},
+                             country: {required: "Рожденный в СССР"},
+                             city: {required: "Не бойся, вводи, мы не ЧК"},
+                             street: {required: "Не бойся, вводи, мы не ЧК"},
+                             number: {required: "Не бойся, вводи, мы не ЧК", digits: "Милейший, это ж цифры!"}
+                     }
+     });             
 
             
 
 });
-</script>       
+</script>  
+
 </head>
 <body id = "body">
     

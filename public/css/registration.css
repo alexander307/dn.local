@@ -51,7 +51,7 @@ line-height: 1.5;
 #title 
 {
 margin-top: 50px;
-margin-left: 15%;
+margin-left: 10%;
 float: left;
 width: 225px;
 height: 65%;
@@ -94,10 +94,10 @@ padding-left: 5px;
 
 #field
 {
-margin: 50px;
+margin-top: 50px;
 height: 65%;
 float: left;
-width: 200px;
+width: 400px;
 border-left: 2px solid black;
 padding-left: 5px;
 
@@ -196,4 +196,31 @@ width: 100mm;
 height: 100%;
 float: right;
 background-color: whitesmoke;
+}
+
+#login
+{
+    float: left; 
+background: green;
+    width: 100%;
+    height: 100px;
+     
+    
+}
+
+ .indent label.error {
+  margin-left: 0;
+}
+label.error {
+  font-size: 10pt;
+  font-family: monospace;
+  font-variant: normal;
+  color: #F00;
+  font-weight: bold;
+  display: block;
+  margin-left: 215px;
+}
+input.error,  select.error  {
+  background: #FFA9B8;
+  border: 1px solid red;
 }

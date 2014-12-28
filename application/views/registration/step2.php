@@ -14,19 +14,19 @@
         
     <div id ="field">
 	
-        <select id = "cell" ><option>Я мужчина</option><option>Я женщина</option></select><br/>
-        <select id = "cell" ><option>в браке</option><option>влюблен(а)</option><option>встречаюсь</option><option>все сложно</option><option>не женат</option></select> <br/>
-	<input type = "checkbox" id = "cell1" /> <br/>
+        <select class = "cell" name ="sex"><option value = ''>пол</option><option value ="male">Я мужчина</option><option value ="female">Я женщина</option></select><br/>
+        <select class = "cell" name = "family"><option value = ''>---</option><option value = '1'>в браке</option><option value = '2'>влюблен(а)</option><option value = '3'>встречаюсь</option><option value = '4'>все сложно</option><option value = '5'>не женат</option></select> <br/>
+	<input type = "checkbox" id = "cell1" value ="enable" /> <br/>
         
-	<select><option>1</option><option>2</option></select>
-        <select><option>январь</option><option>февраль</option></select>
-        <select><option>1900</option><option>1902</option></select></br>
+	<select name = "day"><option value="" >--</option><option value = '1'>1</option><option value = '2'>2</option></select>
+        <select name = "month"><option value="" >----</option><option value = '1'>январь</option><option value = '2'>февраль</option></select>
+        <select name = "year"><option value="" >----</option><option value = '1'>1900</option><option value = '2'>1902</option></select></br>
         
         
-	<select id = "cell"><option>Выбрать</option><option>Город</option></select> <br/>
-        <select id = "cell"><option>Выбрать</option><option>Страну</option></select> <br/>
-	<select id = "cell"><option>Выбрать</option><option>Город</option></select></br> 
-	<input type = "text" name = "nickname" size = "20" value = "Улица" id = "cell2"/><input type = "text" name = "nickname" size = "20" value = "Дом" id = "cell1"/>  <br/>
+	<input type = "text" name = "native_town" size = "20" value = "Родной город..." class = "cell"/> <br/>
+        <select id = "cell" name ="country"><option value = ''>---</option><option value = '1'>Выбрать</option><option value = '2'>Страну</option></select> <br/>
+	<input type = "text" name = "city" size = "20" value = "Город" class = "cell"/></br> 
+	<input type = "text" name = "street" size = "20" value = "Улица" class = "cell"/><input type = "text" name = "number" size = "4" value = "Дом" class = "cell"/>  <br/>
        
         </div>
   
@@ -34,10 +34,7 @@
     <div id="button"> 
         <input type ="submit" id ="next" name = "submit" value = ">" />
     </div>
-       <div id ="mistakes">
-           Тут будут выводится ошибки валидации </br>
-           Сделать что-нибудь красивенькое
-       </div>
+       
 	  </form>
 	</div>
 
