@@ -116,36 +116,16 @@ $(document).ready(function()
             }); 
             
             
-     $('#border').validate({
+     $('#border1').validate({
          
          rules: {
-             login: {
-                 required: true,
-                 rangelength: [4,16]
-             },
-             password:
-                     {
-                required: true,
-                rangelength: [4,16] 
-                     },
-                password1:
-                     {
-                        equalTo: '#password' 
-                     },
-                     name:
-                             {
-                                 required: true
-                             },
-                    surname:
-                             {
-                                 required: true
-                             },
-                    patronomyc:
-                             {
-                                 required: true
-                             },
-                             nickname:
-                             {required: true},
+             login: {required: true, rangelength: [4,16]},
+             password:{required: true,rangelength: [4,16] },
+                password1:{equalTo: '#password'},
+                     name:{required: true},
+                    surname:{required: true},
+                    patronomyc:{required: true},
+                             nickname:{required: true},
                              sex:{required: true},
                              family: {required: true},
                              day: {required: true},
@@ -195,7 +175,13 @@ $(document).ready(function()
                              city: {required: "Не бойся, вводи, мы не ЧК"},
                              street: {required: "Не бойся, вводи, мы не ЧК"},
                              number: {required: "Не бойся, вводи, мы не ЧК", digits: "Милейший, это ж цифры!"}
-                     }
+                     },
+                     
+                      errorPlacement: function(error, element) {
+    error.appendTo( element.parent("td").next("td") )
+  }
+                     
+                    
      });             
 
             

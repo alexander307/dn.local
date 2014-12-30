@@ -8,6 +8,7 @@
     Игры<br/>
     Цитаты <br/>
     О себе<br/>
+    Не показывать информацию<br/>
     </div>
         
     <div id ="field3">
@@ -18,6 +19,7 @@
         <textarea rows="5" cols="45" name="music"> и </textarea> <br/>
         <textarea rows="5" cols="45" name="music"> и </textarea> <br/>
         <textarea rows="5" cols="45" name="music"> и </textarea> <br/>
+       
         
 	
         </div>
@@ -27,8 +29,9 @@
         <input type ="submit" id ="next" name = "submit" value = ">" />
     </div>
        <div id ="mistakes">
-           Тут будут выводится ошибки валидации </br>
-           Сделать что-нибудь красивенькое
+           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+           <b>Не показывать интересы</b>
+           <input type = "checkbox" name = "inter_show" id = "cell1" value ="enable" />
        </div>
 	  </form>
 	</div>
