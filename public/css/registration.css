@@ -1,3 +1,9 @@
+label { display: inline-block; width: 20%; }
+.realperson-challenge { display: inline-block }
+.accepted { padding: 0.5em; border: 2px solid green; }
+.rejected { padding: 0.5em; border: 2px solid red; }
+
+
 #registry
 {
 float: left; 
@@ -179,6 +185,16 @@ border-left: 2px solid black;
 padding-left: 5px;
 }
 
+#button4
+{
+ margin-top: 5px;
+ margin-left: 5px;
+float: left;
+width: 50px;
+height: 600px;
+border-left: 2px solid black;
+padding-left: 5px;
+}
 
 
 #next {

@@ -1,4 +1,5 @@
 <!---- Форма для ввода поста --->
+
 <div id = 'wall1'>
 <div id = "post_container">
     <form action="" method="post">
@@ -40,7 +41,14 @@ echo "<div class = 'line'>$a[$j]</br>";
 //echo "Номер поста: $b[$j]</br>";
 echo "<div class = 'but'><a href= '/comments/$b[$j]' class= 'iframe' title= 'Комментировать'><img src = '".URL::base()."public/images/comm.png'></a></div>"; //Ссылка на фрейм комментария
 //$p = 0;
- echo "<form  action='' method='post'><input type='hidden' name = 'send1' value = '".$b[$j]."'><input name='send' type='image' src = '".URL::base()."public/images/delete.png' /></form></div>";       
+if (Request::current()->param('id') == Cookie::get('user', 'no user'))
+{
+ echo "<form  action='' method='post'><input type='hidden' name = 'send1' value = '".$b[$j]."'><input name='send' type='image' src = '".URL::base()."public/images/delete.png' /></form>";       
+}
+ else {
+     echo "<img src = '".URL::base()."public/images/delete.png' />"; 
+}
+echo "</div>";
 /*foreach ($arr as $x)
             {
                 if ($x[0] == $b[$j]) 
@@ -59,6 +67,7 @@ for ($j = $i-3; $j>=0; $j--)
     echo "<div class = 'label'>";
 echo "<div class = 'line'>$a[$j]</br>";
 //echo "Номер поста: $b[$j]</br>";
+
 echo "<div class = 'but'><a href= '/comments/$b[$j]' class= 'iframe' title= 'Комментировать'><img src = '".URL::base()."public/images/comm.png'></a></div>";
 echo "<form action='' method='post'><input type='hidden' name = 'send1' value = '".$b[$j]."'><input name='send' type='image' src = '".URL::base()."public/images/delete.png' title ='Удалить'/></form></div>";
 

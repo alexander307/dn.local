@@ -30,14 +30,33 @@
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/jquery.validate.min.js"></script>
 
 
+
+<!------Подключение стилей ------>
 <?php foreach($styles as $style): ?>
     <link href="<?php echo URL::base(); ?>public/css/<?php echo $style; ?>.css" 
     rel="stylesheet" type="text/css" />
-    
-    
 <?php endforeach; ?>
+    
+  <!------Иконка ДН на вкладке ------>  
   <link rel="shortcut icon" href="<?php echo URL::base(); ?>public/images/favicon.png" type="image/png"/>  
+  <?php $post_id = Request::current()->action();
+if ($post_id == "step5") { ?>
+  <!---капча--->
+<link rel="stylesheet" type="text/css" href="<?php echo URL::base(); ?>public/css/jquery.realperson.css"> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="<?php echo URL::base(); ?>public/js/jquery.plugin.js"></script> 
+<script type="text/javascript" src="<?php echo URL::base(); ?>public/js/jquery.realperson.js"></script>
+
+<script>
+$(function() {
+	$('#defaultReal').realperson(
+                {regenerate:	'Изменить'});
+});
+</script>
+<?php };?>
   <script>
+      
 $(document).ready(function()
 { //$('#slider').hide();
      $('.cell').focus(function(){
@@ -111,7 +130,7 @@ $(document).ready(function()
    $(".youtube").fancybox(
            
                 {
-        width : '100%',
+        width : '53%',
 	height : '100%'
             }); 
             
@@ -119,12 +138,13 @@ $(document).ready(function()
      $('#border1').validate({
          
          rules: {
-             login: {required: true, rangelength: [4,16]},
-             password:{required: true,rangelength: [4,16] },
-                password1:{equalTo: '#password'},
-                     name:{required: true},
-                    surname:{required: true},
-                    patronomyc:{required: true},
+            video_comments: {rangelength: [4,16]},               
+            login: {required: true, rangelength: [4,16]},
+            password:{required: true,rangelength: [4,16] },
+            password1:{equalTo: '#password'},
+                            name:{required: true},
+                            surname:{required: true},
+                            patronomyc:{required: true},
                              nickname:{required: true},
                              sex:{required: true},
                              family: {required: true},
@@ -135,7 +155,31 @@ $(document).ready(function()
                              country: {required: true},
                              city: {required: true},
                              street: {required: true},
-                             number: {required: true, digits: true}
+                             number: {required: true, digits: true},
+                             email: {required: true, email: true},
+                             country1: {required: true},
+                             country2: {required: true},
+                             country3: {required: true},
+                             country4: {required: true},
+                             city1: {required: true},
+                             city2: {required: true},
+                             city3: {required: true},
+                             city4: {required: true},
+                             school1: {required: true},
+                             school2: {required: true},
+                             school31: {required: true},
+                             school32: {required: true},
+                             school4: {required: true},
+                             year11: {required: true},
+                             year12: {required: true},
+                             year21: {required: true},
+                             year22: {required: true},
+                             year31: {required: true},
+                             year32: {required: true},
+                             year41: {required: true},
+                             year42: {required: true}
+                             
+                             
                              
                      
          },
@@ -144,26 +188,13 @@ $(document).ready(function()
                      login:
                      { required: "Введи свой логин, как без этого то?"},
                   password:
-                     {
-                required: "Тебе не нужен пароль?",
-                rangelength: "Пароль должен быть от 4 до 16ти символов" 
-                     },
+                     { required: "Тебе не нужен пароль?",
+                rangelength: "Пароль должен быть от 4 до 16ти символов" },
                 password1:
-                     {
-                        equalTo: "Пароль не совпадает" 
-                     },
-                     name:
-                             {
-                                 required: "Как тебя зовут то?"
-                             },
-                    surname:
-                             {
-                                 required: "Фамилия есть, Шариков?"
-                             },
-                    patronomyc:
-                             {
-                                 required: "Как вас по отчеству?"
-                             },
+                     { equalTo: "Пароль не совпадает"},
+                     name: {required: "Как тебя зовут то?"},
+                    surname:{required: "Фамилия есть, Шариков?"},
+                     patronomyc:{required: "Как вас по отчеству?"},
                              nickname:{required: "Никнейм?"},
                              sex:{required: "Да ВАМ в самую пору на Евровидение!"},
                              family: {required: "Асоциальный Вы типчик!"},
@@ -174,20 +205,23 @@ $(document).ready(function()
                              country: {required: "Рожденный в СССР"},
                              city: {required: "Не бойся, вводи, мы не ЧК"},
                              street: {required: "Не бойся, вводи, мы не ЧК"},
-                             number: {required: "Не бойся, вводи, мы не ЧК", digits: "Милейший, это ж цифры!"}
+                             number: {required: "Не бойся, вводи, мы не ЧК", digits: "Милейший, это ж цифры!"},
+                             email: {required: "Без почты ну никак нельзя!", email: "Это не электронная почта!"}
                      },
                      
                       errorPlacement: function(error, element) {
-    error.appendTo( element.parent("td").next("td") )
+    error.appendTo( element.parent("td").next("td") );
   }
                      
                     
      });             
-
-            
+             //Капча
+       
 
 });
 </script>  
+
+
 
 </head>
 <body id = "body">

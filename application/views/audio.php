@@ -9,7 +9,9 @@
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/lib/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/dist/jplayer/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/dist/add-on/jplayer.playlist.min.js"></script>
-<script type="text/javascript">
+
+
+<script>
 //<![CDATA[
 <?php
 foreach($audio as $key => $player)
@@ -35,18 +37,27 @@ $(document).ready(function(){
 		{
 			title:"<?php echo $artist[$i]." - ".$track[$i] ?>",
 			mp3:"<?php echo URL::base(); ?>public/mp3/<?php echo $outer_id[$i]."/".$id[$i].".mp3";  ?>"
+                        
+                       
 		},
 		
             <?php } ?>
 		
-	], {
-		swfPath: "../../dist/jplayer",
+	],
+        {
+  playlistOptions: {
+    enableRemoveControls: true
+  }},
+        
+        {
+		swfPath: "<?php echo URL::base(); ?>public/js/dist/jplayer",
 		supplied: "oga, mp3",
 		wmode: "window",
 		useStateClassSkin: true,
 		autoBlur: false,
 		smoothPlayBar: true,
 		keyEnabled: true
+                
 	});
 });
 //]]>
@@ -87,8 +98,9 @@ $(document).ready(function(){
 		</div>
 		<div class="jp-playlist">
 			<ul>
-				<li>&nbsp;</li>
+                            <li>&nbsp;</li>
 			</ul>
+                  
 		</div>
 		<div class="jp-no-solution">
 			<span>Update Required</span>

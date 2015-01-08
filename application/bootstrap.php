@@ -1,5 +1,7 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
+
+
 // -- Environment setup --------------------------------------------------------
 
 // Load the core Kohana class
@@ -138,6 +140,17 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
+Cookie::$salt = '345987456098123';
+
+Route::set('menu', 'menu(/<id>)', array('id' => '.+'))
+        ->defaults(array(
+            'controller' => 'menu',
+            'action'     => 'index',
+            
+    ));
+
+
+
 Route::set('audio', 'audio(/<id>)', array('id' => '.+'))
         ->defaults(array(
             'controller' => 'audio',
@@ -146,6 +159,12 @@ Route::set('audio', 'audio(/<id>)', array('id' => '.+'))
     ));
 
 
+Route::set('vidvid', 'vidvid(/<id>)', array('id' => '.+'))
+        ->defaults(array(
+            'controller' => 'addvideo',
+            'action'     => 'vidvid',
+            
+    ));
 
 Route::set('photo', 'photo(/<id>)', array('id' => '.+'))
         ->defaults(array(

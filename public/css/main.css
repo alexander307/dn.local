@@ -157,6 +157,8 @@ position: fixed;
 left: 2cm;
 }
 
+
+
 #music1
 {
  float: left;
@@ -168,14 +170,14 @@ left: 5cm;
 #video1
 {
 width: 100%;
-min-height: 200px;
+height: 200px;
 background: white;
 float: left;
 }
 #video2
 {
 width: 100%;
-min-height: 200px;
+height: 200px;
 background: yellow;
 float: left;
 
@@ -261,3 +263,51 @@ background-color:red;
 color: blue;
 }
 
+#navigation ul, #navigation li {
+    width: 10px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+        z-index: 1000;
+}
+#navigation a {
+	background-color: rgb(204,204,204);
+	text-decoration: none;
+	font: 16px 'ColaborateLightRegular', Arial, sans-serif;
+	text-indent: 10px;
+	border-top: 1px solid #ccc;
+	border-left:1px solid #ccc;
+	border-right:1px solid #999;
+	border-bottom:1px solid #999;
+	margin: 0px;
+	padding: 0px;
+	color: rgb(53,75,118);
+        z-index: 1000;
+}
+#navigation a:hover {
+	border-top:1px solid #999;
+	border-left:1px solid #999;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	background-color: #555;
+	color: white;
+        z-index: 1000;
+}
+#navigation .stack > a {
+	background-image: url("../images/arrow.png");
+	background-repeat: no-repeat;
+	background-position: 97% 8px;
+        z-index: 1000;
+}
+#navigation .stack > a:hover {
+	background-position: 97% -78px;
+        z-index: 1000;
+}
+#navigation ul .stack > a {
+	background-position: 97% -21px;
+        z-index: 1000;
+}
+#navigation ul .stack > a:hover {
+	background-position: 97% -54px;
+        z-index: 1000;
+}

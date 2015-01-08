@@ -1,16 +1,18 @@
  <?php echo "<div  id = 'music'><a href= '/audio/1' class= 'iframe musica'  title= 'Музыка'><img src = '".URL::base()."public/images/play.png'></a></div>"; ?>
 
-<div id = "menu">
-	<input type = "text" name = "search" size = "20" value = "Поиск..."/>
-	ГРАЖДАНЕ | СООБЩЕСТВА | МУЗЫКА | ВИДЕО | НОВОСТИ | F.A.Q. | ПОДДЕРЖКА |	
-        <?php  echo " "." "." "." ".$unique_['name']." ".$unique_['patronomyc']." ".$unique_['surname'] ; ?> выход
-</div>
+<?php echo $menu; ?>
+
 <div id= "content">
+    
+    
     
     <div id = "content_left">
 	<div id = "avatar">
-            
-            <img src ="<?php echo URL::base(); ?>public/images/ava.jpg"   height =100% width = 100%/>
+            <?php  echo " "." "." "." ".$unique_['name']." ".$unique_['patronomyc']." ".$unique_['surname'] ; 
+        $z = Cookie::get('user', 'no user');
+        echo $z; ?>
+            <br/>
+            <?php echo $avatar; ?>
         </div>
 	<div id = "info">
             <div id ="slider">
@@ -38,7 +40,7 @@
                         echo "<div><div class ='slide1'><b>О моих божественных интересах и увлекательнейших хобби: </b><hr/>";
                         echo "<b>Музыка: </b><i>".$interests['music']."</i><br/>";
                         echo "<b>Фильмы: </b><i>".$interests['films']."</i><br/>";
-                        echo "<b>Зомбоящик: </b><i>".$interests['TV-show']."</i><br/>";
+                        echo "<b>Зомбоящик: </b><i>".$interests['TV_show']."</i><br/>";
                         echo "<b>Литература: </b><i>".$interests['books']."</i><br/>";
                         echo "<b>Игры: </b><i>".$interests['games']."</i><br/>";
                         echo "<b>Цитаты: </b><i>".$interests['cities']."</i><br/>";

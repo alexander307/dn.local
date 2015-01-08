@@ -6,7 +6,16 @@ class Controller_User extends Controller_Common {
     // Главная страница
     public function action_index()
     {
+        if ((Cookie::get('user', 'no user'))== 'no user')
+        {
+           
+            HTTP::redirect(URL::site()."/");
+        }
+        
+        
         $id = $this->request->param('id');
+        
+        
         
         $content = View::factory('/user')
                 ->bind('unique_', $unique_)
@@ -19,8 +28,12 @@ class Controller_User extends Controller_Common {
                 ->bind('job', $job)
                 ->set('user',$id)
                 ->bind('posts',$posts)
-                ->bind('video', $video);
+                ->bind('video', $video)
+                ->bind('menu', $menu)
+                ->bind('avatar', $avatar);
         
+        $avatar_url = 'avatar/index/'.$id;
+        $avatar = Request::factory($avatar_url)->execute();
         
         $posts_url = 'wall/'.$id;
         $posts = Request::factory($posts_url)->execute();
@@ -28,7 +41,8 @@ class Controller_User extends Controller_Common {
         $video_url = 'user_video/'.$id;
         $video = Request::factory($video_url)->execute();
                 
-                
+        $menu_url = 'menu/'.$id;
+        $menu = Request::factory($menu_url)->execute();       
              
         //$unique_ = Model::factory('User')->get_info($id);
         $unique_ = ORM::factory('unique', $id)->as_array();
@@ -42,6 +56,9 @@ class Controller_User extends Controller_Common {
         $high_education = ORM::factory('higheducation', $id)->as_array();
         $service = ORM::factory('service', $id)->as_array();
         $job = ORM::factory('job', $id)->as_array();
+        
+        
+        
         $this->template->content = $content;
         /*
          = array();
@@ -53,5 +70,7 @@ class Controller_User extends Controller_Common {
         $job = array();
         
          */
+         
+        
     }
 }

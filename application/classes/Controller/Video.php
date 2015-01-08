@@ -9,10 +9,15 @@ class Controller_Video extends Controller_Common {
 
         $id = $this->request->param('id');
         
+        
+        
+        if ((Cookie::get('user', 'no user'))== 'no user')
+        {
+            HTTP::redirect(URL::site()."/");
+        }
+        
                 //->bind('moovie', $moovie);
-        
-      
-        
+
         if(($_POST))
         {
          
@@ -35,11 +40,16 @@ ORM::factory('video', $a)
                 ->as_array();
       
      $content = View::factory('/video')
-                ->bind('video', $video);
+                ->bind('video', $video)
+                  -> bind('menu', $menu);
+     
+     $menu_url = 'menu/'.$id;
+        $menu = Request::factory($menu_url)->execute();
           $this->template->content = $content;
         
         
        
     }	
 
+   
 }
