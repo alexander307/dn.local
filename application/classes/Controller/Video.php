@@ -7,17 +7,12 @@ class Controller_Video extends Controller_Common {
     
     { 
 
-        $id = $this->request->param('id');
-        
-        
-        
-        if ((Cookie::get('user', 'no user'))== 'no user')
+$id = $this->request->param('id');
+ if ((Cookie::get('user', 'no user'))== 'no user')
         {
             HTTP::redirect(URL::site()."/");
         }
-        
-                //->bind('moovie', $moovie);
-
+ //->bind('moovie', $moovie);
         if(($_POST))
         {
          

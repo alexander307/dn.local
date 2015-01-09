@@ -51,6 +51,7 @@ public function action_user()
 $video_comments = ORM::factory('videocomments');
 $video_comments->comment = Arr::get($_POST, 'video_comments');
 $video_comments->outer_id = $id;
+$video_comments->ava_id = Cookie::get('user', '0');
 $video_comments->save();
        
 

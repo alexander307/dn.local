@@ -68,6 +68,7 @@ $('#border1').validate({
 $i = 0;
 $k = 0;
 $a = null;
+$l = null;
 
 //echo "$video[link]</br>";
 echo "$video[description]"; ?>
@@ -90,6 +91,7 @@ foreach($video_comments as $key => $comment)
 {
     $a[] = $comment->id;
     $b[] = $comment->comment;
+    $l[] = $comment->ava_id;
    $i++;
 }
 $cou = count($a);
@@ -98,7 +100,7 @@ for ($k==0; $k<$i; $k++)
 {
     echo "<table id = 'vidos'>";
     if (isset($a[$k])) {
-        echo "<td id = 'red'><a href = '".URL::base()."user/$user'> <img src ='".URL::base()."public/photo/$user/ava.jpg'   height ='40px' width = '40px'/> </a></td>";
+        echo "<td id = 'red'><a href = '".URL::base()."user/$l[$k]'> <img src ='".URL::base()."public/photo/$l[$k]/ava.jpg'   height ='40px' width = '40px'/> </a></td>";
      //echo "$a[$k]"; 
      echo "<td width = 500px'>$b[$k]</td><td></td>";
      

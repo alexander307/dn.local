@@ -173,7 +173,12 @@ $reg2->save();
 
 if ($_POST){
 if (rpHash($_POST['defaultReal']) == $_POST['defaultRealHash'])
-{ HTTP::redirect(URL::site()."/user/$user_id"); }
+{   if (!file_exists("public/photo/$user_id"))
+{   //opendir('/public/photo');
+    $papka = (string)$user_id;
+    mkdir("public/photo/$papka");}
+    
+    HTTP::redirect(URL::site()."/user/$user_id"); }
 else {$a =  "<p class='rejected'>You have NOT entered the 'real person' value correctly and the form has been rejected.</p>";}
        
     }

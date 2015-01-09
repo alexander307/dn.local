@@ -8,10 +8,10 @@
     
     <div id = "content_left">
 	<div id = "avatar">
-            <?php  echo " "." "." "." ".$unique_['name']." ".$unique_['patronomyc']." ".$unique_['surname'] ; 
+            <?php  echo "<table id = 'name'><tr><td>".$unique_['name']."</td><td>".$unique_['patronomyc']."</td><td>".$unique_['surname']."</td></tr></table>"; 
         $z = Cookie::get('user', 'no user');
-        echo $z; ?>
-            <br/>
+        //echo $z; ?>
+            
             <?php echo $avatar; ?>
         </div>
 	<div id = "info">
