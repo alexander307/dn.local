@@ -24,7 +24,8 @@ if ($m != null) {
   
   
 </form>
-  </div> 
+  </div>
+
 
    <div id = 'deleteava'> 
     <form action='' method='post'>

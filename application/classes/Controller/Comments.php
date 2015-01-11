@@ -20,6 +20,7 @@ class Controller_Comments extends Controller {
 $comment = ORM::factory('comment');
 $comment->comment = Arr::get($_POST, 'comment');
 $comment->post_id = $post_id;
+$comment->ava_id = Cookie::get('user', '0');
 $comment->save();
        
 

@@ -31,6 +31,7 @@ $i = count($a)-1;
 $post = ORM::factory('post');
 $post->post = Arr::get($_POST, 'post');
 $post->outer_id = $outer_id;
+$post->ava_id;
 $post->save();
         } 
         
