@@ -18,7 +18,7 @@
             <div id ="slider">
                  
                <div><div class ="slide1"> <?php 
-                            echo "<b> О главном</b> <hr/>";
+                            echo "<b> О главном</b> [редактировать]<hr/>";
                             echo "<b>День рождения: </b><i>".$main_information['Birthday_date']."</i><br/>";
                             echo "<b>Родной город: </b><i>".$main_information['Native_town']."</i><br/>";
                             echo "<b>Семейное положение:</b><i> ".$main_information['MS']."</i><br/><hr/>";

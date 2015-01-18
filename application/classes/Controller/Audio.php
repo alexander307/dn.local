@@ -6,7 +6,7 @@ class Controller_Audio extends Controller {
     public function action_index()
     {
       $outer_id = $this->request->param('id');
-        $content = View::factory('/audio')
+        $content = View::factory('/audio_alt')
                 ->bind ('audio', $audio);
         $audio = ORM::factory('audio')
                 ->where('outer_id', '=', $outer_id)

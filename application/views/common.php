@@ -29,6 +29,8 @@
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/lib/circle.player.js"></script>
 <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/jquery.validate.min.js"></script>
 
+<script src="//cdn.ckeditor.com/4.4.6/full/ckeditor.js"></script> <!--- заменить на ссылку из паки js --->
+
 
 
 <!------Подключение стилей ------>
@@ -55,7 +57,13 @@ $(function() {
 });
 </script>
 <?php };?>
+
+
+
   <script>
+      
+      
+  
       
 $(document).ready(function()
 { //$('#slider').hide();
@@ -101,20 +109,13 @@ $(document).ready(function()
 		cyclic: true
 	});
     $('.iframe').fancybox({
-		width : '50%',
-		height : '50%',	
+		width : '60%',
+		height : '50%'	
 	});// конец fancybox
         
-        $(".musica").fancybox({
-        hight: '100%',
-        titlePosition: 'inside',
-        width: '40%',
-        overlayOpacity: 0.5,
-        //hideOnOverlayClick: false,
         
-        });
                 $('#music').click(function()
-        {$("#fancybox-outer").css( {right: '-60%',
+        {$("#fancybox-outer").css( {right: '-55%',
                 top: '10px',
          position: 'fixed' 
         });
@@ -126,6 +127,16 @@ $(document).ready(function()
         position: 'relative'    
         });
         });
+        
+        $(".musica").fancybox({
+        height: '150%',
+        //titlePosition: 'inside',
+        width: '40%',
+        overlayOpacity: 0.5
+        //hideOnOverlayClick: false,
+        
+        });
+        
         
    $(".youtube").fancybox(
            

@@ -1,3 +1,6 @@
+
+
+
 <?php 
 
 $i = 0;
@@ -36,3 +39,4 @@ for ($k==0; $k<$i; $k++)
         <input name="send" type="submit" value="Отправить" />
     </form>
 </div>
+</body>

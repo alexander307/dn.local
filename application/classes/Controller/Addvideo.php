@@ -80,5 +80,14 @@ ORM::factory('videocomments', $a)
              ->as_array();
      $this->response->body($content);   
     }
+    
+    public function action_test()
+    {
+          $id = $this->request->param('id');
+         $content = View::factory('/vidvid_1');
+                
+          $this->response->body($content); 
+        
+    }
 
 }

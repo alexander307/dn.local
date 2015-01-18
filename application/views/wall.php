@@ -4,8 +4,14 @@
 <div id = "post_container">
     <form action="" method="post">
         <b id = "napisat">Чем бы вы хотели поделится: </b><br />
-        <textarea id = "post" name="post" cols="40" rows="5"></textarea><br /><br />
+        <textarea id = "editor1" name="post" cols="40" rows="5" class = 'editor1'></textarea><br /><br />
         <input name="send" type="image"  src = '<?php echo URL::base().'public/images/add.png' ?>' value="Отправить" class = "inline"/>
+    <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+    
     </form>
 </div>
 
@@ -27,6 +33,7 @@ foreach($posts as $key => $post)
 {
     $a[] = $post->post;
     $b[] = $post->id;
+    $l[] = $post->ava_id;
 
 }
 
@@ -37,7 +44,7 @@ $i = count($a)-1; //всего постов
 for ($j = $i; $j>=$i-2; $j--)
 {
     echo "<div class = 'label'>";
-echo "<div class = 'line'>$a[$j]</br>";
+echo "<a href = '".URL::base()."user/$l[$j]'> <img src ='".URL::base()."public/photo/$l[$j]/ava.jpg'   height ='100px' width = '100px'/> </a><div class = 'line'>$a[$j]</br>";
 //echo "Номер поста: $b[$j]</br>";
 echo "<div class = 'but'><a href= '/comments/$b[$j]' class= 'iframe' title= 'Комментировать'><img src = '".URL::base()."public/images/comm.png'></a></div>"; //Ссылка на фрейм комментария
 //$p = 0;
@@ -65,7 +72,7 @@ echo "</div>";
 for ($j = $i-3; $j>=0; $j--)
 {
     echo "<div class = 'label'>";
-echo "<div class = 'line'>$a[$j]</br>";
+echo "<a href = '".URL::base()."user/$l[$j]'> <img src ='".URL::base()."public/photo/$l[$j]/ava.jpg'   height ='100px' width = '100px'/> </a><div class = 'line'>$a[$j]</br>";
 //echo "Номер поста: $b[$j]</br>";
 
 echo "<div class = 'but'><a href= '/comments/$b[$j]' class= 'iframe' title= 'Комментировать'><img src = '".URL::base()."public/images/comm.png'></a></div>";

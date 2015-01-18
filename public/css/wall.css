@@ -63,12 +63,12 @@ font-size: 16px;
     border-width: 1mm;
 border-style: outset;
 border-color: whitesmoke;
-font-family: monospace;
- font-weight: bolder; 
- font-size: 13pt; 
- color: #ccffff ;
- font-style: oblique;
- font-variant: small-caps;
+//font-family: monospace;
+ //font-weight: bolder; 
+ //font-size: 13pt; 
+ //color: #ccffff ;
+ //font-style: oblique;
+ //font-variant: small-caps;
  }
  
  .inline
