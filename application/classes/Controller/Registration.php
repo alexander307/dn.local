@@ -62,7 +62,7 @@ $registration2->id = $user_id;
 $reg2->country = Arr::get($_POST, 'country');
 $reg2->city = Arr::get($_POST, 'city');
 $reg2->street = Arr::get($_POST, 'street');
-$reg2->house = Arr::get($_POST, 'email');
+$reg2->house = Arr::get($_POST, 'number');
 $reg2->id = $user_id;
 
 $registration2->save(); 
