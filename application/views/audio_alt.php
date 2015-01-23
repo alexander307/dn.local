@@ -99,14 +99,29 @@ $i = 0;
         
       </ol>
     </div>
-    <div id="shortcuts">
-      <!----<div>
+   <!---- <div id="shortcuts">
+      <div>
         <h1>Горячие клавишы:</h1>
         <p><em>→</em> Следующий трек</p>
         <p><em>←</em> Предыдущий трек</p>
         <p><em>Space</em> Play/pause</p>
       </div>
     </div>----->
+  <div id = 'downloadava'>
+   <?php //if ($id == Cookie::get('user', 'no user')) { ?> 
+<form enctype="multipart/form-data" action ="" method ="POST">
+    
+     <input  type ="file" name ="track"  />
+     <br/>
+     <input type = "text" name = "artist" size = "20" value = "Исполнитель" /><br/>
+     <input type = "text" name = "track" size = "20" value = "Песня" /><br/>
+    <input  type='submit'  value ="Загрузить" width = '60%' height="60%"/>
+   <input type='hidden' name = 'send' value = 'send' width = 0 height="0">
   
+  
+</form>
+  </div>
+      <?php //}
+     ?>
 
 </body></html>

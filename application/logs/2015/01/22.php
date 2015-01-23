@@ -317,3 +317,9 @@
 #12 C:\xampp\htdocs\dn.local\system\classes\Kohana\Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #13 C:\xampp\htdocs\dn.local\index.php(118): Kohana_Request->execute()
 #14 {main} in C:\xampp\htdocs\dn.local\modules\database\classes\Kohana\Database\MySQL.php:171
+2015-01-22 23:59:55 --- CRITICAL: ErrorException [ 4 ]: syntax error, unexpected end of file ~ APPPATH\views\audio_alt.php [ 124 ] in file:line
+2015-01-22 23:59:55 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2015-01-22 23:59:56 --- CRITICAL: ErrorException [ 4 ]: syntax error, unexpected end of file ~ APPPATH\views\audio_alt.php [ 124 ] in file:line
+2015-01-22 23:59:56 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
