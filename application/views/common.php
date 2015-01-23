@@ -83,6 +83,16 @@ $(document).ready(function()
             }
                 );
                 //$('#wall2').hide();
+       $('#slid').anythingSlider(
+            {
+        theme: "cs-portfolio", //поменял стандартную тему - эта больше дизайну сайта соответствует
+        easing: 'easeInOutBack', //анимация прокрутки
+        animationTime: 1000, //время анимации
+        buildStartStop: false, //убрать кнопки Старт/Стоп   
+        resizeContents: true
+            }
+                );         
+                
    
      
     $('#wall1').click(function()
@@ -307,6 +317,6 @@ $(document).ready(function()
     <marquee> Copyright Александр Ковальчук </marquee>
   </footer>
 		</div>
-</div>
+
 </body>
 </html>

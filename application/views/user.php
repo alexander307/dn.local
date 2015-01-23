@@ -15,10 +15,17 @@
             <?php echo $avatar; ?>
         </div>
 	<div id = "info">
-            <div id ="slider">
+            <div id ="slider"> 
+                
+                 
                  
                <div><div class ="slide1"> <?php 
-                            echo "<b> О главном</b> [редактировать]<hr/>";
+                            echo "<b> О главном</b>";
+                            if (Request::current()->param('id') == Cookie::get('user', 'no user'))
+{
+                            echo "<a href= '/editmain/$z'>[редактировать]</a>";
+                                }
+                                echo "<hr/>";
                             echo "<b>День рождения: </b><i>".$main_information['Birthday_date']."</i><br/>";
                             echo "<b>Родной город: </b><i>".$main_information['Native_town']."</i><br/>";
                             echo "<b>Семейное положение:</b><i> ".$main_information['MS']."</i><br/><hr/>";

@@ -19,7 +19,8 @@ $edit->patronomyc = Arr::get($_POST, 'patronomyc');
 $edit->nickname = Arr::get($_POST, 'nickname');
 $edit->email = Arr::get($_POST, 'email');
 $edit->save(); 
-//HTTP::redirect(URL::site()."/edit/edit1/$id");
+HTTP::redirect(URL::site()."/edit/edit1/$id"); 
+
 }
        
         
@@ -37,9 +38,7 @@ $edit->save();
         
           $main = ORM::factory('maininformation', $id)->as_array();
           $adress = ORM::factory('adress', $id)->as_array();
-       print_r($main);
-       echo "<br/>";
-        print_r($adress);
+       
         
         if ($_POST)
         {
@@ -62,7 +61,7 @@ $reg2->house = Arr::get($_POST, 'number');
 
 $registration2->save(); 
 $reg2->save();
- //HTTP::redirect(URL::site()."/edit/edit2/$id");           
+ HTTP::redirect(URL::site()."/edit/edit2/$id");           
             
         }
        
@@ -89,7 +88,7 @@ $reg2->save();
             $registration3->about_me =Arr::get($_POST, 'about_me');
             
             $registration3->save();
-          //HTTP::redirect(URL::site()."/edit/edit3/$id");
+          HTTP::redirect(URL::site()."/edit/edit3/$id");
         }
        
        
@@ -156,7 +155,7 @@ $reg2->save();
             
             
             
-          // HTTP::redirect(URL::site()."/edit/edit4/$id");
+           HTTP::redirect(URL::site()."/edit/edit4/$id");
         }
        
         

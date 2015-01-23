@@ -5,7 +5,18 @@
     rel="stylesheet" type="text/css" />
     <script src="<?php echo URL::base(); ?>public/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="<?php echo URL::base(); ?>public/js/audiojs/audio.min.js"></script>
-    
+    <style>
+        .left_
+        {
+            float: left;
+        }
+        .right_
+        {
+            float: right;
+            position: relative;
+            bottom: 30px;
+        }
+    </style>
     <script>
         $(document).ready(function()
 {
@@ -77,22 +88,25 @@ $i = 0;
       <div class="audiojs " classname="audiojs" id="audiojs_wrapper0"><audio preload="" src="<?php echo URL::base(); ?>audio/<?php echo $outer_id[0];  ?>"></audio>          <div class="play-pause">             <p class="play"></p>             <p class="pause"></p>             <p class="loading"></p>             <p class="error"></p>           </div>           <div class="scrubber">             <div class="progress" style="width: 0px;"></div>             <div class="loaded" style="width: 167.825410851748px;"></div>           </div>           <div class="time">             <em class="played">00:00</em>/<strong class="duration">03:57</strong>           </div>           <div class="error-message"></div></div>
       <ol>
           <?php for ($i==0; $i < $cou-1; $i++) { ?>
-        <li><a href="<?php echo URL::base(); ?>audio/<?php echo $outer_id[$i];  ?>"
+          <li><a href="<?php echo URL::base(); ?>audio/<?php echo $outer_id[$i];  ?>"
                data-src="<?php echo URL::base(); ?>public/mp3/<?php echo $outer_id[$i]."/".$id[$i].".mp3";  ?>">
                 <?php echo $artist[$i]." - ".$track[$i] ?>
-            </a></li>
+                  </a> 
+      
+        </li>
+        <?php   echo "<div class = 'right_'><form action='' method='post'><input type='hidden' name = 'send1' value = '".$id[$i]."'><input name='send' type='submit' value = 'x' title ='Удалить'/></form></div>"; ?>
         <?php } ?>
         
       </ol>
     </div>
     <div id="shortcuts">
-      <div>
+      <!----<div>
         <h1>Горячие клавишы:</h1>
         <p><em>→</em> Следующий трек</p>
         <p><em>←</em> Предыдущий трек</p>
         <p><em>Space</em> Play/pause</p>
       </div>
-    </div>
+    </div>----->
   
 
 </body></html>

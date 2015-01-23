@@ -361,3 +361,15 @@ border-right: 2.5mm solid whitesmoke;
 
 
 }
+
+#slid
+{min-height: 200px;
+max-height: 600px;
+padding: 0px;
+}
+
+#edit
+{
+    margin-top: 20px;
+    padding-top: 20px;
+}
