@@ -69,6 +69,21 @@
     </script>
   </head>
   <body>
+      <div id = 'downloadava'>
+   <?php //if ($id == Cookie::get('user', 'no user')) { ?> 
+<form enctype="multipart/form-data" action ="" method ="POST">
+    
+     <input  type ="file" name ="track"  />
+     <br/>
+     <input type = "text" name = "artist" size = "20" value = "Исполнитель" /><br/>
+     <input type = "text" name = "track" size = "20" value = "Песня" /><br/>
+    <input  type='submit'  value ="Загрузить" width = '60%' height="60%"/>
+   <input type='hidden' name = 'send' value = 'send' width = 0 height="0">
+  
+  
+</form>
+  </div>
+      
       <?php
 foreach($audio as $key => $player)
 {
@@ -83,11 +98,11 @@ $cou = count($audio);
 $i = 0;
             ?>
       
-    <div id="wrapper">
+      <div id="wrapper"> <!-------->
       
       <div class="audiojs " classname="audiojs" id="audiojs_wrapper0"><audio preload="" src="<?php echo URL::base(); ?>audio/<?php echo $outer_id[0];  ?>"></audio>          <div class="play-pause">             <p class="play"></p>             <p class="pause"></p>             <p class="loading"></p>             <p class="error"></p>           </div>           <div class="scrubber">             <div class="progress" style="width: 0px;"></div>             <div class="loaded" style="width: 167.825410851748px;"></div>           </div>           <div class="time">             <em class="played">00:00</em>/<strong class="duration">03:57</strong>           </div>           <div class="error-message"></div></div>
       <ol>
-          <?php for ($i==0; $i < $cou-1; $i++) { ?>
+          <?php for ($i==0; $i < $cou; $i++) { ?>
           <li><a href="<?php echo URL::base(); ?>audio/<?php echo $outer_id[$i];  ?>"
                data-src="<?php echo URL::base(); ?>public/mp3/<?php echo $outer_id[$i]."/".$id[$i].".mp3";  ?>">
                 <?php echo $artist[$i]." - ".$track[$i] ?>
@@ -107,20 +122,7 @@ $i = 0;
         <p><em>Space</em> Play/pause</p>
       </div>
     </div>----->
-  <div id = 'downloadava'>
-   <?php //if ($id == Cookie::get('user', 'no user')) { ?> 
-<form enctype="multipart/form-data" action ="" method ="POST">
-    
-     <input  type ="file" name ="track"  />
-     <br/>
-     <input type = "text" name = "artist" size = "20" value = "Исполнитель" /><br/>
-     <input type = "text" name = "track" size = "20" value = "Песня" /><br/>
-    <input  type='submit'  value ="Загрузить" width = '60%' height="60%"/>
-   <input type='hidden' name = 'send' value = 'send' width = 0 height="0">
   
-  
-</form>
-  </div>
       <?php //}
      ?>
 

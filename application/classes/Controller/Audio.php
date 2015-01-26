@@ -10,23 +10,21 @@ class Controller_Audio extends Controller {
                 ->bind('a', $a)
                 ->bind ('audio', $audio);
         
-         
-        $audio = ORM::factory('audio')
-                ->where('outer_id', '=', $outer_id)
-                ->find_all()
-                ->as_array();
         
         
         
-        $this->response->body($content);
+        
+        
+        
         
            if ($_POST&&((Arr::get($_POST, 'send'))=='send'))
           {
           if ($a == UPLOAD_ERR_OK)
          {
              $ext = strtolower(pathinfo($_FILES['track']['name'], PATHINFO_EXTENSION));
+              print_r($ext);
              print_r($_FILES);
-            
+           
              switch($ext)
              {
                  case 'mp3': 
@@ -52,7 +50,7 @@ class Controller_Audio extends Controller {
             $c = $k.".".$ext;
             echo $c;
              $id = Cookie::get('user', 'no user');
-             $destfile = "public/mp3/$id/".basename($_FILES['track']['name']);
+             $destfile = "public/mp3/$outer_id/".basename($_FILES['track']['name']);
              $b = basename($_FILES['track']['name']);
             //print_r($destfile);
              $ret = @move_uploaded_file($_FILES['track']['tmp_name'],$destfile);
@@ -69,7 +67,7 @@ class Controller_Audio extends Controller {
              $save->track = Arr::get($_POST, 'track');
              $save->outer_id = $outer_id;
              $save->save();
-             HTTP::redirect(URL::site()."/audio/".$outer_id);
+             //HTTP::redirect(URL::site()."/audio/".$outer_id);
              } 
              
              }
@@ -89,13 +87,17 @@ $check = ORM::factory('audio', $a)
                 ->as_array();
 
 if ($check['id']!=null){
+@unlink("public/mp3/$outer_id/".$a.".mp3");    
 ORM::factory('audio', $a)
         ->delete();
-@unlink("public/mp3/$id/".$a.".mp3");
+
 
         }   } 
-        
-       
+        $audio = ORM::factory('audio')
+                ->where('outer_id', '=', $outer_id)
+                ->find_all()
+                ->as_array();
+      $this->response->body($content);  
         
         
         

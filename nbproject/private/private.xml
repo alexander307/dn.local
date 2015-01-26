@@ -5,7 +5,7 @@
         <group>
             <file>file:/C:/xampp/htdocs/dn.local/public/css/index.css</file>
             <file>file:/C:/xampp/htdocs/dn.local/application/views/avatar.php</file>
-            <file>file:/C:/xampp/htdocs/dn.local/application/views/common.php</file>
+            <file>file:/C:/xampp/htdocs/dn.local/application/classes/Controller/Registration.php</file>
             <file>file:/C:/xampp/htdocs/dn.local/application/classes/Controller/Avatar.php</file>
             <file>file:/C:/xampp/htdocs/dn.local/application/classes/Controller/Audio.php</file>
             <file>file:/C:/xampp/htdocs/dn.local/application/views/audio_alt.php</file>

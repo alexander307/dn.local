@@ -6,11 +6,11 @@ class Controller_Images extends Controller_Common {
     public function action_index()
     
     { 
-       $id = $this->request->param('id');
+       $outer_id = $this->request->param('id');
         
         
        $photo = ORM::factory('photo')
-                ->where('outer_id', '=', $id)
+                ->where('outer_id', '=', $outer_id)
                 ->find_all()
                 ->as_array();
       

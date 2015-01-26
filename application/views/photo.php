@@ -22,6 +22,8 @@ $oid[] = $f->outer_id;
                  <?php for ($i==0; $i<$cou; $i++) { ?>  
 		<a href="<?php echo URL::base(); ?>public/photo/<?php echo "/$oid[0]/$id[$i].jpg"?>" rel="gallery" title="<?php echo "$name[$i]" ?>">
                     <img src="<?php echo URL::base(); ?>public/photo/<?php echo "/$oid[0]/$id[$i].jpg"?>" width="70" height="70" alt="golf balls">
+                    <?php if ((($i+1)%6) == 0)
+                        echo "<br/>"; ?>
                 </a>
                     
                  <?php } ?>  
