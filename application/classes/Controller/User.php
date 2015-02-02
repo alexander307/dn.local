@@ -30,7 +30,9 @@ class Controller_User extends Controller_Common {
                 ->bind('posts',$posts)
                 ->bind('video', $video)
                 ->bind('menu', $menu)
-                ->bind('avatar', $avatar);
+                ->bind('avatar', $avatar)
+                ->bind('proverka', $proverka)
+                ->bind('id', $id);
         
         $avatar_url = 'avatar/index/'.$id;
         $avatar = Request::factory($avatar_url)->execute();
@@ -57,9 +59,30 @@ class Controller_User extends Controller_Common {
         $service = ORM::factory('service', $id)->as_array();
         $job = ORM::factory('job', $id)->as_array();
         
+        $my_id = (Cookie::get('user', '0'));
+        
+        $proverka = ORM::factory('friends')
+                ->where('friend_id', '=', $id)
+                ->and_where('outer_id', '=', $my_id )
+                ->find()
+                ->as_array();
         
         
         $this->template->content = $content;
+        
+         if (isset($_POST['wanttobe'])&&($_POST['wanttobe']=='go'))
+        {
+            
+         
+       $add = ORM::factory('friends');
+                 $add->index = 1;
+                 $add->friend_id = $my_id;
+                 $add->outer_id = $id;
+                 $add->save();
+                 
+         
+         HTTP::redirect(URL::site()."/user/$id");
+        }
         /*
          = array();
         $interests = array();

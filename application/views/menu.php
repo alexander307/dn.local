@@ -1,5 +1,5 @@
 <head>
-    
+ <?php $my_id = (Cookie::get('user', '0'));   ?>
     
    
 <script src="<?php echo URL::base(); ?>public/js/nav1.1.min.js"></script>
@@ -20,7 +20,7 @@
 <div id = "menu">
 	<!--- <input type = "text" name = "search" size = "20" value = "Поиск..."/> ---->
 <ul id ="navigation">        
-    <li><a href = "#">домой</a></li>
+    <li><a href = "<?php echo URL::base();?>/user/<?php echo $my_id ?>">домой</a></li>
     <li><a href = "#">граждане</a>
         <ul>
             <li><a href = "#">все граждане</a></li>

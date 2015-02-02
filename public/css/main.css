@@ -136,7 +136,7 @@ div b
 {
 width: 100%;
 min-height: 280px;
-background: black;
+background: greenyellow;
 float: left;
 
 }
@@ -361,6 +361,34 @@ border-right: 2.5mm solid whitesmoke;
 
 
 }
+#avatar2
+{
+
+float: left;
+width: 35mm;
+height: 150px;
+background: whitesmoke;
+//opacity: 0,5;
+//font-family: monospace;
+//font-stretch: expanded;
+//border-left: 2.5mm solid whitesmoke;
+//border-right: 2.5mm solid whitesmoke;
+
+}
+
+#friends_right
+{
+    float: right;
+    min-height: 100px;
+    width: 265mm;
+}
+
+friends
+{
+width: 300mm;
+height: 150px;
+}
+
 
 #slid
 {min-height: 200px;

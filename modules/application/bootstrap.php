@@ -138,6 +138,15 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
+Route::set('friends', 'friends(/<id>)', array('id' => '.+'))
+        ->defaults(array(
+            'controller' => 'friends',
+            'action'     => 'index',
+            
+    ));
+
+
+
 Route::set('wall', 'wall(/<id>)', array('id' => '.+'))
         ->defaults(array(
             'controller' => 'wall',

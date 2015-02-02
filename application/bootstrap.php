@@ -142,6 +142,13 @@ Kohana::modules(array(
 
 Cookie::$salt = '345987456098123';
 
+Route::set('friends', 'friends(/<id>)', array('id' => '.+'))
+        ->defaults(array(
+            'controller' => 'friends',
+            'action'     => 'index',
+            
+    ));
+
 Route::set('editmain', 'editmain(/<id>)', array('id' => '.+'))
         ->defaults(array(
             'controller' => 'editmain',

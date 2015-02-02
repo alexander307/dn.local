@@ -68,10 +68,35 @@
                         </div>
     </div>
     <div id = "content_right">               
-        <div id = "people"> люди</div>   
+        <div id = "people"> люди
+            <!---Показывать, когда не друзья--->
+            <?php print_r($proverka);
+            echo $id;
+            $my_id = (Cookie::get('user', '0'));
+            ?>
+            <?php if (($proverka['index']!=1)and($proverka['index']!=2)and($proverka['index']===null)and($id!=$my_id)) {
+           ?>
+            <form action ="" method ="post">
+            <input type='hidden' name = 'wanttobe' value = 'go'>
+            <input name="send" type="submit"  value="Добавить в друзья" /> 
+        </form>
+                    
+            <?php } 
+            if  (($proverka['index']==2)&&($id!=$my_id)) {
+            ?>
+        <!---Показывать эти кнопки, когда не друзья--->    
+        <form action ="" method ="post">
+            <input type='hidden' name = 'letter' value = ''>
+            <input name="send" type="submit"  value="Письмо" /> 
+        </form>
+         <?php } ?>
+        
+        
+        </div>   
         
         <div id = 'usrvideo'>
             <?php echo $video ?>
+            
         </div>
         
     		
