@@ -78,7 +78,7 @@
     <td>
     <div id ="friends_right">
         <form action ="" method ="post">
-            <input type='hidden' name = 'letter' value = '<?php echo $main_id2[$j]?>'>
+            <input type='hidden' name = 'letter' value = '<?php echo $friend[$j]?>'>
             <input name="send" type="submit"  value="Письмо" /> 
         </form>
         

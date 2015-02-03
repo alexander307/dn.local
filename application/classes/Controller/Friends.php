@@ -6,7 +6,15 @@ class Controller_Friends extends Controller_Common {
 // Страница о сайте
     public function action_index()
     {
+        
         $user_id = $this->request->param('id');
+        if ((Cookie::get('user', 'no user'))!=$user_id)
+        {
+           
+            HTTP::redirect(URL::site()."/");
+        }
+        
+        
         $content = View::factory('/friends')
                 ->bind('friends', $friends)
                 ->bind('menu', $menu)
@@ -56,7 +64,8 @@ class Controller_Friends extends Controller_Common {
         
        if (isset($_POST['letter']))
         {
-         echo "letter";
+           $friend_id = Arr::get($_POST, 'letter');
+         HTTP::redirect(URL::site()."/letter/$friend_id");
         } 
         
       
